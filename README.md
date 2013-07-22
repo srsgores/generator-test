@@ -1,8 +1,8 @@
 # Generator-test
-[![Build Status](https://secure.travis-ci.org/srsgores/generator-test.png?branch=master)](https://travis-ci.org/srsgores/generator-test)
 
-A generator for Yeoman.
+An example generator for Yeoman.
 
+Read the tutorial online [here](http://seangoresht.com/index.php/tutorials/item/getting-started-with-yeoman).
 ## Getting started
 - Make sure you have [yo](https://github.com/yeoman/yo) installed:
     `npm install -g yo`
