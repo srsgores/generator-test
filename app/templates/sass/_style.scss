@@ -1,0 +1,89 @@
+/*------------------------------------------------------------------------------------------------------------------------
+ @author: <%= authorName %>
+ @www: <%= authorURL %>
+ @github: <%= authorGitHub %>
+
+ @twitter: <%= authorTwitter %>
+
+ @copyright: COPYRIGHT 2013 <%= authorCompanyName %>
+ =============================================================================
+ Filename: style.scss
+ =============================================================================
+ This file is responsible for all styles on the <%= name %> application.  Styles should be compiled using compass and sass.
+ --------------------------------------------------------------------------------------------------------------------- */
+
+/* =============================================================================
+Imports
+========================================================================== */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
+@import "partials/variables.scss";
+@import "partials/_helpers.scss";
+@import "partials/reset.scss";
+@import "compass/css3/pie";
+@import "compass/css3";
+@import "partials/_variables.scss";
+@import "partials/_grids.scss";
+<% if (includeIcomoon) {%>@import "partials/icomoon/_icomoon.scss";<% } %>
+@import "partials/_type.scss";
+@import "partials/_forms.scss";
+<% if (includeBasicNav) { %>@import "partials/_nav.scss";<% } %>
+@import "partials/media-queries";
+
+body {
+	color: $textColour;
+	background: $bodyBackground;
+	background: $bodyBackgroundImage;
+	line-height: $lineHeight;
+	font-family: $baseFontFamily;
+}
+
+.box {
+	@extend %normal-margin;
+	@extend .border-box;
+	@extend %normal-padding;
+	@extend .bordered;
+	@extend .rounded;
+	@extend %transition-all;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, p, h1, h2, h3, h4, h5, h6, blockquote, pre, address, cite, code, del, dfn, img, q, dl, ul, fieldset, form, legend, table, caption, summary, audio, video, %normal-margin-bottom {
+	@extend %normal-margin-bottom; //spaced only at bottom by default
+}
+
+nav, nav li, .toolbar, .toolbar li, .btn-group {
+	@extend .inline;
+	ul {
+		@extend %margin-none;
+		@extend %padding-none;
+	}
+	input {
+		@extend .inline;
+	}
+}
+
+/* =============================================================================
+Border Radius
+========================================================================== */
+nav, button, .btn, pre, code, aside, menu, .nav {
+	@extend .rounded;
+	@include pie;
+}
+
+legend, header, footer, article, section {
+	@extend .bordered-bottom;
+	@extend .bordered-top;
+}
+
+/* =============================================================================
+Shadows
+========================================================================== */
+.shadowed {
+	@include box-shadow(inset 0 0 3em fade-out($textColour, 0.7));
+}
+
+/* =============================================================================
+images
+========================================================================== */
+img, object, embed {
+	max-width: 100%;
+}
